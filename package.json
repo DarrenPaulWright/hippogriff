@@ -91,8 +91,7 @@
 		"update-clean": "npm run pre-clean && npm run update",
 		"update-commit": "npm run update && npm test && git add --all && git diff HEAD --quiet || git commit -m \"Updating dependencies\"",
 		"update-patch": "npm run update && npm test && git add --all && git diff HEAD --quiet || git commit -m \"Updating dependencies\" && npm version patch",
-		"docs": "typedoc",
-		"tsc": "tsc index.ts --noemit --allowjs"
+		"docs": "typedoc"
 	},
 	"dependencies": {
 		"async-agent": "^0.5.8",
