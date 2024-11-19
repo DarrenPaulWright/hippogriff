@@ -1,0 +1,134 @@
+{
+	"name": "hippogriff",
+	"version": "0.0.0",
+	"description": "A zero-config test and benchmark runner.",
+	"type": "module",
+	"keywords": [
+		"bench",
+		"benchmark"
+	],
+	"license": "MIT",
+	"author": {
+		"name": "Darren Paul Wright",
+		"email": "Darren@DarrenPaulWright.com",
+		"url": "https://www.darrenpaulwright.com"
+	},
+	"homepage": "https://github.com/DarrenPaulWright/hippogriff#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/DarrenPaulWright/hippogriff.git"
+	},
+	"bugs": {
+		"url": "https://github.com/DarrenPaulWright/hippogriff/issues"
+	},
+	"main": "index.js",
+	"bin": "src/cli.js",
+	"files": [
+		"/src",
+		"!/src/**/*.test.js",
+		"!/src/**/*.test.ts",
+		"index.js",
+		"index.ts"
+	],
+	"browserslist": [
+		"defaults"
+	],
+	"engines": {
+		"node": ">=20"
+	},
+	"badges": {
+		"npm": {
+			"image": "https://img.shields.io/npm/v/hippogriff.svg",
+			"url": "https://npmjs.com/package/hippogriff"
+		},
+		"build": {
+			"base": "https://travis-ci.org/DarrenPaulWright/",
+			"image": "hippogriff.svg?branch=master",
+			"url": "hippogriff"
+		},
+		"coverage": {
+			"base": "https://coveralls.io/",
+			"image": "repos/github/DarrenPaulWright/hippogriff/badge.svg?branch=master",
+			"url": "github/DarrenPaulWright/hippogriff?branch=master"
+		},
+		"deps": {
+			"image": "https://david-dm.org/DarrenPaulWright/hippogriff.svg",
+			"url": "https://david-dm.org/DarrenPaulWright/hippogriff"
+		},
+		"size": {
+			"base": "https://packagephobia.now.sh/",
+			"image": "badge?p=hippogriff",
+			"url": "result?p=hippogriff"
+		},
+		"vulnerabilities": {
+			"base": "https://snyk.io/test/github/DarrenPaulWright/hippogriff",
+			"image": "/badge.svg?targetFile=package.json",
+			"url": "?targetFile=package.json"
+		},
+		"license": {
+			"image": "https://img.shields.io/github/license/DarrenPaulWright/hippogriff.svg",
+			"url": "https://npmjs.com/package/hippogriff/LICENSE.md"
+		}
+	},
+	"scripts": {
+		"lint": "eslint \"**/*\"",
+		"lint:fix": "eslint \"**/*\" --fix",
+		"tsc:watch": "tsc --watch",
+		"test": "npm run lint && tsc && node src/cli.js",
+		"test:verbose": "tsc && node src/cli.js -v",
+		"test:watch": "tsc && node src/cli.js -v -w",
+		"test:noFiles": "tsc && node src/cli.js **/*.noMatch.js",
+		"test:errors": "tsc && node src/cli.js **/*.errors.js -v",
+		"bench": "tsc && node src/cli.js **/*.bench.js",
+		"bench:verbose": "tsc && node src/cli.js **/*.bench.js -v",
+		"bench:watch": "tsc && node src/cli.js **/*.bench.js -w",
+		"preversion": "npm test && npm run docs && git add --all && git diff HEAD --quiet || git commit -m \"Updating docs\"",
+		"postversion": "npm publish",
+		"postpublish": "git push --follow-tags",
+		"pre-clean": "rm -rf node_modules && del /f package-lock.json",
+		"clean": "npm run pre-clean && npm install && npm audit fix",
+		"update": "ncu -u && git diff --quiet || npm install && npm audit fix",
+		"update-clean": "npm run pre-clean && npm run update",
+		"update-commit": "npm run update && npm test && git add --all && git diff HEAD --quiet || git commit -m \"Updating dependencies\"",
+		"update-patch": "npm run update && npm test && git add --all && git diff HEAD --quiet || git commit -m \"Updating dependencies\" && npm version patch",
+		"docs": "typedoc",
+		"tsc": "tsc index.ts --noemit --allowjs"
+	},
+	"dependencies": {
+		"async-agent": "^0.5.8",
+		"chalk": "^5.3.0",
+		"char-charts": "^0.3.1",
+		"commander": "^12.1.0",
+		"display-value": "^2.2.0",
+		"glob": "^11.0.0",
+		"glob-parent": "^6.0.2",
+		"minimatch": "^10.0.1",
+		"node-watch": "^0.7.4",
+		"object-agent": "^1.6.1",
+		"parse-imports": "^2.2.1",
+		"slice-ansi": "^7.1.0",
+		"sort-keys": "^5.1.0",
+		"strip-ansi": "^7.1.0",
+		"textdiff-create": "^1.1.11",
+		"type-enforcer": "^1.2.6"
+	},
+	"devDependencies": {
+		"@types/chai": "^5.0.1",
+		"@types/glob-parent": "^5.1.3",
+		"@types/node": "^22.7.9",
+		"@types/promise-fs": "^2.1.5",
+		"blns": "^2.0.4",
+		"chai": "^5.1.2",
+		"dmd-readable": "^1.2.4",
+		"eslint": "^8.56.0",
+		"eslint-config-lucid": "0.4.0",
+		"eslint-config-lucid-typescript": "^0.7.0",
+		"exec-each": "0.0.3",
+		"jsdoc-to-markdown": "^9.0.4",
+		"npm-run-all": "^4.1.5",
+		"type-enforcer-test-helper": "^1.3.10",
+		"typedoc": "^0.26.10",
+		"typedoc-plugin-markdown": "^4.2.9",
+		"typescript": "^5.6.3"
+	}
+}
