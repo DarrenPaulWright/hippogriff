@@ -1,7 +1,8 @@
 {
 	"$schema": "https://typedoc-plugin-markdown.org/schema.json",
 	"plugin": [
-		"typedoc-plugin-markdown"
+		"typedoc-plugin-markdown",
+		"typedoc-plugin-missing-exports"
 	],
 	"out": "./docs",
 	"entryPoints": [

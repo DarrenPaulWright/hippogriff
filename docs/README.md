@@ -6,6 +6,11 @@
 
 A zero-config test and benchmark runner.
 
+CLI name is "hippogriff".
+
+Docs
+available [here.](https://github.com/DarrenPaulWright/hippogriff/blob/main/docs/README.md)
+
 ## Functions
 
 ### after()
@@ -20,7 +25,7 @@ Executes once after everything else within the same scope.
 
 | Parameter | Type |
 | ------ | ------ |
-| `work` | `WorkCallback` |
+| `work` | [`WorkCallback`](-internal-.md#workcallback) |
 
 #### Returns
 
@@ -44,7 +49,7 @@ Executes immediately after each test or bench within the same scope and child sc
 
 | Parameter | Type |
 | ------ | ------ |
-| `work` | `WorkCallback` |
+| `work` | [`WorkCallback`](-internal-.md#workcallback) |
 
 #### Returns
 
@@ -68,7 +73,7 @@ Executes once before anything else within the same scope.
 
 | Parameter | Type |
 | ------ | ------ |
-| `work` | `WorkCallback` |
+| `work` | [`WorkCallback`](-internal-.md#workcallback) |
 
 #### Returns
 
@@ -92,7 +97,7 @@ Executes immediately before each test or bench within the same scope and child s
 
 | Parameter | Type |
 | ------ | ------ |
-| `work` | `WorkCallback` |
+| `work` | [`WorkCallback`](-internal-.md#workcallback) |
 
 #### Returns
 
@@ -118,8 +123,8 @@ function bench(
 | Parameter | Type |
 | ------ | ------ |
 | `title` | `string` |
-| `work`? | `WorkCallback` |
-| `settings`? | `ISettings` |
+| `work`? | [`WorkCallback`](-internal-.md#workcallback) |
+| `settings`? | [`ISettings`](-internal-.md#isettings) |
 
 #### Returns
 
@@ -145,8 +150,8 @@ function describe(
 | Parameter | Type |
 | ------ | ------ |
 | `title` | `string` |
-| `work`? | `WorkCallback` |
-| `settings`? | `ISettings` |
+| `work`? | [`WorkCallback`](-internal-.md#workcallback) |
+| `settings`? | [`ISettings`](-internal-.md#isettings) |
 
 #### Returns
 
@@ -172,8 +177,8 @@ function it(
 | Parameter | Type |
 | ------ | ------ |
 | `title` | `string` |
-| `work`? | `WorkCallback` |
-| `settings`? | `ISettings` |
+| `work`? | [`WorkCallback`](-internal-.md#workcallback) |
+| `settings`? | [`ISettings`](-internal-.md#isettings) |
 
 #### Returns
 
@@ -199,8 +204,8 @@ function when(
 | Parameter | Type |
 | ------ | ------ |
 | `title` | `string` |
-| `work`? | `WorkCallback` |
-| `settings`? | `ISettings` |
+| `work`? | [`WorkCallback`](-internal-.md#workcallback) |
+| `settings`? | [`ISettings`](-internal-.md#isettings) |
 
 #### Returns
 
@@ -210,8 +215,14 @@ function when(
 
 [src/hippogriff.ts:167](https://github.com/DarrenPaulWright/hippogriff/blob/main/src/hippogriff.ts#L167)
 
+## Modules
+
+| Module | Description |
+| ------ | ------ |
+| [\<internal\>](-internal-.md) | - |
+
 ## Namespaces
 
 | Namespace | Description |
 | ------ | ------ |
-| [assert](namespaces/assert.md) | - |
+| [assert](namespaces/assert.md) | Re-exported from type-enforcer. |

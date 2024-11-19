@@ -6,6 +6,8 @@
 
 # assert
 
+Re-exported from type-enforcer.
+
 ## References
 
 ### function

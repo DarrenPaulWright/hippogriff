@@ -56,11 +56,23 @@ export type IMainProcessDataOut = IMainProcessOnly |
 	IMainProcessGroup;
 
 export interface ISettings {
+
+	/** Timeout for tests in ms. Default: 2000. */
 	testTimeout?: number;
+
+	/** Max samples to take per bench. Default: 100. */
 	benchMaxSamples?: number;
+
+	/** Max total duration for each bench. Default: 200. */
 	benchMaxDuration?: number;
+
+	/** Render individual charts for each describe/when. Default: false. */
 	benchDistinctCharts?: boolean;
+
+	/** Render  bench results as durations instead of operations per second. Default: false. */
 	benchDuration?: boolean;
+
+	/** Color theme for bench charts. Default: "light". */
 	benchColors?: 'none' | 'light' | 'bright' | 'dim' | 'cool' | 'passFail' | 'blue' | 'green' | 'magenta' | 'yellow' | 'cyan' | 'red';
 }
 
