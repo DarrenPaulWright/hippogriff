@@ -22,7 +22,9 @@
 		"url": "https://github.com/DarrenPaulWright/hippogriff/issues"
 	},
 	"main": "index.js",
-	"bin": "src/cli.js",
+	"bin": {
+		"hippogriff": "./src/cli.js"
+	},
 	"files": [
 		"/src",
 		"!/src/**/*.test.js",
