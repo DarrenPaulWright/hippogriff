@@ -1,3 +1,5 @@
+#! /usr/bin/env node
+
 import { Command } from 'commander';
 import { glob } from 'glob';
 import { relative } from 'node:path';

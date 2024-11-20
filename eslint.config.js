@@ -18,7 +18,8 @@ export default [
 			'@typescript-eslint/class-methods-use-this': 'warn',
 			'promise/no-callback-in-promise': 'off',
 			'promise/no-promise-in-callback': 'off',
-			'@typescript-eslint/consistent-indexed-object-style': 'off'
+			'@typescript-eslint/consistent-indexed-object-style': 'off',
+			'node/hashbang': 'off'
 		}
 	}
 ];
