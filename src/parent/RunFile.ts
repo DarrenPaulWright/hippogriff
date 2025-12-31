@@ -148,7 +148,7 @@ export default class RunFile {
 	}
 
 	private onForkExit(): void {
-		if (!this.isReady) {
+		if (!this.isReady || this.runError) {
 			this.isEmptyFile = true;
 
 			this.onData({
