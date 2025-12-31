@@ -32,8 +32,8 @@ const getDiff = (
 
 	if (isStringLike(expected)) {
 		return diffTwoLines(
-			displayValue(expected, { beautify: true }),
-			displayValue(actual, { beautify: true })
+			displayValue(expected, { beautify: true, maxCharsPerLine: 50 }),
+			displayValue(actual, { beautify: true, maxCharsPerLine: 50 })
 		);
 	}
 
@@ -53,8 +53,8 @@ const getDiff = (
 		});
 
 		return diffTwoLines(
-			displayValue(expected, { beautify: true }),
-			displayValue(sortedActual, { beautify: true })
+			displayValue(expected, { beautify: true, maxCharsPerLine: 50 }),
+			displayValue(sortedActual, { beautify: true, maxCharsPerLine: 50 })
 		);
 	}
 
@@ -64,14 +64,14 @@ const getDiff = (
 		isMap(expected)
 	) {
 		return diffTwoLines(
-			displayValue(expected, { beautify: true }),
-			displayValue(actual, { beautify: true })
+			displayValue(expected, { beautify: true, maxCharsPerLine: 50 }),
+			displayValue(actual, { beautify: true, maxCharsPerLine: 50 })
 		);
 	}
 
 	return diffTwoLines(
-		displayValue(expected),
-		displayValue(actual)
+		displayValue(expected, { beautify: true, maxCharsPerLine: 50 }),
+		displayValue(actual, { beautify: true, maxCharsPerLine: 50 })
 	);
 };
 

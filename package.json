@@ -100,7 +100,7 @@
 		"chalk": "^5.3.0",
 		"char-charts": "^0.3.1",
 		"commander": "^12.1.0",
-		"display-value": "^2.2.0",
+		"display-value": "^3.0.0",
 		"glob": "^11.0.0",
 		"glob-parent": "^6.0.2",
 		"minimatch": "^10.0.1",
