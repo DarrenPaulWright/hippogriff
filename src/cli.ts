@@ -29,6 +29,13 @@ const options = program.opts();
 const isVerbose = options.verbose === true;
 
 const singleRun = (files: Array<string>): void => {
+	if (!isVerbose) {
+		renderLine([]);
+	}
+
+	renderLine([['', 'Running tests…']]);
+	renderLine([]);
+
 	runFiles(files, isVerbose)
 		.then((results) => {
 			const { passed, errors, lines } = renderSummary(results, isVerbose);
@@ -50,6 +57,8 @@ const singleRun = (files: Array<string>): void => {
 glob(filesGlob, { ignore: 'node_modules/**', absolute: true })
 	.then((files) => {
 		if (isVerbose) {
+			renderLine([]);
+
 			files.forEach((fileName) => {
 				renderLine(
 					[['', 'File found: '], ['group', relative(process.cwd(), fileName)]]
