@@ -21,7 +21,7 @@ const timerify = (
 
 			if (entries.length === iterations || count === iterations) {
 				const duration = (allEntries.length === iterations ? allEntries : entries)
-					.reduce((sum, entry) => sum + entry.duration, 0);
+					.reduce<number>((sum, entry) => sum + entry.duration, 0);
 
 				performance.clearMarks();
 				performance.clearMeasures();

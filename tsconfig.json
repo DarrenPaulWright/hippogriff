@@ -6,7 +6,7 @@
 	"compilerOptions": {
 		"target": "esnext",
 		"module": "esnext",
-		"moduleResolution": "node",
+		"moduleResolution": "bundler",
 		"strict": true,
 		"alwaysStrict": true,
 		"exactOptionalPropertyTypes": true,
@@ -16,6 +16,7 @@
 		"strictFunctionTypes": true,
 		"strictNullChecks": true,
 		"skipLibCheck": true,
-		"allowSyntheticDefaultImports": true
+		"allowSyntheticDefaultImports": true,
+		"diagnostics": true
 	}
 }

@@ -34,8 +34,10 @@ export default class WatchRelationships {
 			const importPath = info.moduleSpecifier?.value;
 			const type = info.moduleSpecifier?.type;
 
-			if ((type === 'relative' || type === 'absolute') &&
-				!importPath?.includes('node_modules')) {
+			if (
+				(type === 'relative' || type === 'absolute') &&
+				!importPath?.includes('node_modules')
+			) {
 				const fullImportPath = resolvePath(directory, importPath!);
 
 				if (!this.fileImports[path].includes(fullImportPath)) {

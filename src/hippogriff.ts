@@ -83,7 +83,7 @@ const send = (data: IMainProcessDataOut): void => {
 		data.result.error = convertError(data.result.error);
 	}
 
-	process!.send!(data);
+	process.send!(data);
 };
 
 process.on('message', (data: IMainProcessDataIn) => {

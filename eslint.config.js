@@ -19,7 +19,9 @@ export default [
 			'promise/no-callback-in-promise': 'off',
 			'promise/no-promise-in-callback': 'off',
 			'@typescript-eslint/consistent-indexed-object-style': 'off',
-			'node/hashbang': 'off'
+			'node/hashbang': 'off',
+			'@typescript-eslint/no-unsafe-type-assertion': 'off',
+			'@typescript-eslint/no-unsafe-assignment': 'off'
 		}
 	}
 ];

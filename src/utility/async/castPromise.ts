@@ -2,7 +2,7 @@ import { isFunction, isPromise } from 'type-enforcer';
 
 const castPromise = <T>(work: Promise<T> | (() => (Promise<T> | T)) | T): Promise<T> => {
 	if (isPromise(work)) {
-		return work as Promise<T>;
+		return work;
 	}
 
 	if (isFunction(work)) {
@@ -18,7 +18,7 @@ const castPromise = <T>(work: Promise<T> | (() => (Promise<T> | T)) | T): Promis
 		});
 	}
 
-	return Promise.resolve(work as T);
+	return Promise.resolve(work);
 };
 
 export default castPromise;

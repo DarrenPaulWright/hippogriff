@@ -34,7 +34,7 @@ const canRenderBenchChart = (
 	chartData: Array<{ data: Array<number>; label: string; group: Array<string> }>,
 	tree: Array<TabTypes>
 ): boolean => {
-	return (tree.length === 0 || Boolean(result.settings.benchDistinctCharts)) &&
+	return (tree.length === 0 || result.settings.benchDistinctCharts) &&
 		chartData.some((item) => item.data.length !== 0);
 };
 

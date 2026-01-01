@@ -10,6 +10,7 @@ import renderSummary from './parent/render/renderSummary.js';
 import runFiles from './parent/runFiles.js';
 import watch from './parent/watch/watch.js';
 
+// eslint-disable-next-line unicorn/prefer-import-meta-properties
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 const program = new Command();
 let filesGlob = '';
