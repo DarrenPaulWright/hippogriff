@@ -22,6 +22,12 @@ const isStringLike = (value: unknown): boolean => isDate(value) ||
 	isString(value) ||
 	isRegExp(value);
 
+const settings = {
+	beautify: true,
+	maxCharsPerLine: 50,
+	sortKeys: true
+};
+
 const getDiff = (
 	expected: unknown,
 	actual: unknown
@@ -32,8 +38,8 @@ const getDiff = (
 
 	if (isStringLike(expected)) {
 		return diffTwoLines(
-			displayValue(expected, { beautify: true, maxCharsPerLine: 50 }),
-			displayValue(actual, { beautify: true, maxCharsPerLine: 50 })
+			displayValue(expected, settings),
+			displayValue(actual, settings)
 		);
 	}
 
@@ -53,8 +59,8 @@ const getDiff = (
 		});
 
 		return diffTwoLines(
-			displayValue(expected, { beautify: true, maxCharsPerLine: 50 }),
-			displayValue(sortedActual, { beautify: true, maxCharsPerLine: 50 })
+			displayValue(expected, settings),
+			displayValue(sortedActual, settings)
 		);
 	}
 
@@ -64,14 +70,14 @@ const getDiff = (
 		isMap(expected)
 	) {
 		return diffTwoLines(
-			displayValue(expected, { beautify: true, maxCharsPerLine: 50 }),
-			displayValue(actual, { beautify: true, maxCharsPerLine: 50 })
+			displayValue(expected, settings),
+			displayValue(actual, settings)
 		);
 	}
 
 	return diffTwoLines(
-		displayValue(expected, { beautify: true, maxCharsPerLine: 50 }),
-		displayValue(actual, { beautify: true, maxCharsPerLine: 50 })
+		displayValue(expected, settings),
+		displayValue(actual, settings)
 	);
 };
 

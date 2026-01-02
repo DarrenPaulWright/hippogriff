@@ -39,10 +39,8 @@
 		"node": ">=20"
 	},
 	"scripts": {
-		"lint": "eslint \"**/*\"",
-		"lint:fix": "eslint \"**/*\" --fix",
 		"tsc:watch": "tsc --watch",
-		"test": "npm run lint && tsc && node src/cli.js",
+		"test": "tsc && eslint && node src/cli.js",
 		"test:verbose": "tsc && node src/cli.js -v",
 		"test:watch": "tsc && node src/cli.js -v -w",
 		"test:noFiles": "tsc && node src/cli.js **/*.noMatch.js",
@@ -66,7 +64,7 @@
 		"chalk": "^5.6.2",
 		"char-charts": "^0.3.2",
 		"commander": "^14.0.2",
-		"display-value": "^3.1.0",
+		"display-value": "^3.2.0",
 		"glob": "^13.0.0",
 		"glob-parent": "^6.0.2",
 		"minimatch": "^10.1.1",

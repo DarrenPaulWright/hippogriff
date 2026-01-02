@@ -4,9 +4,12 @@ import { it, when } from '../index.js';
 
 when('diff', () => {
 	it('should show diffs in json', () => {
-		assert.deepEqual({ first: 3, second: [1, 2, 3] }, {
-			fir2st: 4,
-			second: [3, 2, 1]
+		assert.deepEqual({
+			first: 3,
+			second: [1, 2, 3]
+		}, {
+			second: [3, 2, 1],
+			fir2st: 4
 		});
 	});
 
